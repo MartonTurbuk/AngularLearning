@@ -7,7 +7,9 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "lint": "eslint . --ext .ts,.html"
+    "lint:eslint": "eslint 'src/**/*.{ts,tsx}' --fix",
+    "lint:eslint:all": "eslint 'src/**/*.{ts,tsx,js,jsx}' --fix",
+    "lint:tslint": "tslint -p tsconfig.json -c tslint.json 'src/**/*.ts'"
   },
   "private": true,
   "dependencies": {
@@ -33,15 +35,20 @@
     "@angular/compiler-cli": "^18.0.0",
     "@eslint/eslintrc": "^3.1.0",
     "@types/jasmine": "~5.1.0",
-    "@typescript-eslint/eslint-plugin": "^7.15.0",
-    "@typescript-eslint/parser": "^7.15.0",
+    "@typescript-eslint/eslint-plugin": "^7.17.0",
+    "@typescript-eslint/parser": "^7.17.0",
     "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
     "jasmine-core": "~5.1.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "prettier": "^3.3.3",
+    "tslint": "^5.20.1",
+    "tslint-config-prettier": "^1.18.0",
     "typescript": "~5.4.2"
   }
 }

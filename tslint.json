@@ -1,0 +1,17 @@
+{
+    "defaultSeverity": "error",
+    "extends": ["tslint:recommended", "tslint-config-prettier"],
+    "jsRules": {},
+    "rules": {
+        "quotemark": [true, "single"],
+        "semicolon": [true, "always"],
+        "trailing-comma": [true, {"multiline": "always", "singleline": "never"}],
+        "indent": [true, "spaces", 4],
+        "max-line-length": [true, 100],
+        "object-literal-key-quotes": [false],
+        "arrow-parens": [false],
+        "no-console": [true, "log", "error"],
+        "curly": [true, "as-needed"]
+    },
+    "rulesDirectory": []
+}
