@@ -27,6 +27,15 @@ export class TasksService {
     },
   ];
 
+  constructor() {
+      const tasks: string | null = localStorage.getItem('tasks');
+
+      // tslint:disable-next-line:curly
+      if (tasks && tasks.length > 0) {
+        this.tasks = JSON.parse(tasks);
+      }
+  }
+
   public getUserTasks(userId: string) {
     return this.tasks.filter((task) => task.userId === userId);
   }
@@ -39,9 +48,15 @@ export class TasksService {
       title: taskData.title,
       userId: userID,
     });
+    this.saveTasks();
   }
 
   public removeTask(id: string) {
     this.tasks = this.tasks.filter((task) => task.id !== id);
+    this.saveTasks();
+  }
+
+  private saveTasks() {
+      localStorage.setItem('tasks', JSON.stringify(this.tasks));
   }
 }
